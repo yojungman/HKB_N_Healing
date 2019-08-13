@@ -7,11 +7,12 @@ from .models import Candidate
 
 def index(request):
     candidates= Candidate.objects.all()
-    str=''
-    for candidate in candidates: 
-        str+= "<p>{} 기호 {}번({})<br>".format(
-            candidate.name,
-        candidate.party_number,
-        candidate.Area)
-        str+=candidate.intoduction+"</p>"
-    return HttpResponse(str)
+    # str=''
+    # for candidate in candidates: 
+    #     str+= "<p>{} 기호 {}번({})<br>".format(
+    #         candidate.name,
+    #     candidate.party_number,
+    #     candidate.Area)
+    #     str+=candidate.intoduction+"</p>"
+    return render(request,'elections/index.html')
+    # return HttpResponse(str)

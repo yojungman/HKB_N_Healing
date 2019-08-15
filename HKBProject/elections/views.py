@@ -6,7 +6,8 @@ from .models import Candidate
 
 
 def index(request):
-    candidates= Candidate.objects.all()
+    candidates = Candidate.objects.all()
+    context = {'candidates':candidates}
     # str=''
     # for candidate in candidates: 
     #     str+= "<p>{} 기호 {}번({})<br>".format(
@@ -14,5 +15,5 @@ def index(request):
     #     candidate.party_number,
     #     candidate.Area)
     #     str+=candidate.intoduction+"</p>"
-    return render(request,'elections/index.html')
+    return render(request, 'elections/index.html', context)
     # return HttpResponse(str)
